@@ -1,0 +1,25 @@
+<div id="sidebar">
+  <div class="main-menu">
+    <ul>
+      <li *ngFor="let item of menu">
+        <a href="#" [routerLink]="item?.to" (click)="ui.toggleSubMenu(item)" routerLinkActive="active"
+           [class.active]="ui.activeSubmenu?.id === item.id">
+          <i [ngClass]="item?.icon"></i>
+          {{item?.label | translate}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sub-menu">
+    <ng-container *ngIf="ui.hideSubMenu">
+      <ul>
+        <li *ngFor="let item of ui.activeSubmenu.sub" [routerLink]="item?.to" routerLinkActive="active">
+          <i [ngClass]="item?.icon"></i>
+          {{item?.label | translate}}
+        </li>
+      </ul>
+    </ng-container>
+
+  </div>
+</div>

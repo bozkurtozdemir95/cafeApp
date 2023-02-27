@@ -1,0 +1,6 @@
+<div class="page-title">
+  <h1>{{title | translate}}</h1>
+  <div class="breadcrumbs">
+    <span *ngFor="let nav of navs" [routerLink]="'/' + nav.link" routerLinkActive="active" translate>{{nav.text}}</span>
+  </div>
+</div>

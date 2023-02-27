@@ -1,0 +1,48 @@
+@import '../../../assets/css/sass/themes/theme';
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  .badge {
+    text-align: center;
+    margin: 15px;
+    width: calc(100% / 4 - 30px);
+    color: var(--primary-color);
+
+    i {
+      font-size: 32px;
+    }
+
+    h5 {
+      font-size: 1rem;
+      color: var(--text-dark);
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    span {
+      font-weight: 300;
+      line-height: 2rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .badges {
+    .badge {
+      width: calc(100% / 2 - 30px);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .badges {
+    .badge {
+      width: calc(100% / 1 - 30px);
+    }
+  }
+}

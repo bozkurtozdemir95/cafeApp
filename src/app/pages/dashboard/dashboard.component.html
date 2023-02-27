@@ -1,0 +1,10 @@
+<page-title [title]="'menu.dashboard'"></page-title>
+<div class="badges">
+  <div class="badge card" *ngFor="let item of badges">
+    <div class="card-body">
+      <i [ngClass]="item.icon"></i>
+      <h5>{{'dashboard.' + item.text | translate}}</h5>
+      <span>{{item.value}}</span>
+    </div>
+  </div>
+</div>

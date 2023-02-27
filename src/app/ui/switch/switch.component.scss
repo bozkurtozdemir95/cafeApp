@@ -1,0 +1,52 @@
+@import '../../../assets/css/sass/themes/theme';
+
+.switch {
+  position: relative;
+  display: flex;
+  width: 28px;
+  height: 16px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .slider {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+
+      &:before {
+        transform: translateX(12px);
+        box-shadow: none;
+        background: var(--white-color);
+        border-color: var(--white-color);
+      }
+    }
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid var(--text-medium);
+
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      left: 1px;
+      top: 1px;
+      transition: .4s;
+      border-radius: 50%;
+      background: var(--text-medium);
+      border: 1px solid var(--text-medium);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<div id="header">
+  <div class="header-left">
+    <button class="transparent-button menu-toggler" [class.main]="!ui.hideMainMenu" [class.sub]="ui.hideSubMenu"
+            (click)="ui.toggleSidebar()">
+      <icon [icon]="'menu-left'"></icon>
+      <icon [icon]="'menu-right'"></icon>
+    </button>
+
+  </div>
+  <div class="header-logo">
+
+  </div>
+  <div class="header-right">
+    <div class="theme-switch">
+      <switch (changeValue)="ui.switchTheme($event)" [isChecked]="ui.theme === 'dark-mode'"></switch>
+    </div>
+    <div class="btn-group notifications-menu" dropdown placement="bottom left">
+      <span class="count">3</span>
+      <action-button [color]="'light'" [icon]="'bell'"  dropdownToggle></action-button>
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-right notifications">
+        <ul role="menu">
+          <li role="menuitem" *ngFor="let item of notifications">
+            <button class="transparent-button delete" (click)="deleteNotification(item.id)">
+              <icon [icon]="'close'"></icon>
+            </button>
+            <p>{{item.text}}</p>
+            <div class="date">
+              <span>{{item.date}}</span>
+              <span>{{item.time}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <action-button [color]="'light'" [icon]="isFullScreen ? 'actual' : 'fullscreen'"
+                   (click)="fullScreenClick()"></action-button>
+    <div class="btn-group lang-menu" dropdown placement="bottom left">
+      <ui-button [size]="'sm'" [type]="'light'" [className]="'dropdown-toggle'" dropdownToggle>
+        {{'general.lang_name' | translate}}
+        <icon [icon]="'carret-down'"></icon>
+      </ui-button>
+      <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+        <li role="menuitem" *ngFor="let lang of languages">
+          <a class="dropdown-item" (click)="changeLanguage(lang.key)">{{lang.label}}</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="btn-group user-menu" dropdown placement="bottom left">
+      <button class="transparent-button dropdown-toggle" dropdownToggle>
+        <img src="../../../assets/img/avatar-1.jpg" alt="nfc" class="avatar">
+      </button>
+      <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+        <li role="menuitem"><a class="dropdown-item">Account</a></li>
+        <li role="menuitem"><a class="dropdown-item">Account</a></li>
+        <li role="menuitem"><a class="dropdown-item">Account</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item">Logout</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.table-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+
+  .table {
+    border-radius: 0.75rem;
+    border: initial;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.75rem;
+    cursor: pointer;
+    width: calc(100% / 4 - 30px);
+    margin: 15px;
+
+    h4 {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .table-list {
+    .table {
+      width: calc(100% / 3 - 30px);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .table-list {
+    .table {
+      width: calc(100% / 2 - 30px);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .table-list {
+    .table {
+      width: calc(100% / 1 - 30px);
+    }
+  }
+}

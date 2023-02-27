@@ -1,0 +1,12 @@
+<page-title [title]="'menu.tables'" [navs]="preNavs"></page-title>
+<div class="data-body">
+  <div class="tables">
+    <div class="table-list">
+      <div class="table card" *ngFor="let table of tables">
+        <h4>{{table.name}}</h4>
+        <badge *ngIf="table.empty" [text]="'table.empty' | translate" [type]="'light'"></badge>
+        <badge *ngIf="!table.empty" [text]="'table.full' | translate" [type]="'success'"></badge>
+      </div>
+    </div>
+  </div>
+</div>

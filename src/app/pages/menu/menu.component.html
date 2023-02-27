@@ -1,0 +1,42 @@
+<page-title [title]="'menu.menu'" [navs]="preNavs"></page-title>
+<div class="data-filters">
+  <div class="filter-left">
+    <div class="btn-group" dropdown>
+      <filter-select dropdownToggle>
+        {{'food.category' | translate}}:
+        {{'food.' + activeCategory | translate}}
+        <icon [icon]="'carret-down'"></icon>
+      </filter-select>
+      <ul *dropdownMenu class="dropdown-menu category"
+          role="menu">
+        <li role="menuitem" *ngFor="let item of categories" (click)="changeCategory(item)">
+          <a class="dropdown-item">{{'food.' + item | translate}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="filter-right">
+    <ui-button [type]="'primary'" [size]="'xs'" (click)="selectAll()">Select All</ui-button>
+    <ui-button [type]="'danger'" [size]="'xs'" (click)="clearSelection()">Clear</ui-button>
+  </div>
+</div>
+<div class="data-body">
+  <div class="products-block" *ngFor="let menu of filteredProducts">
+    <h5 class="card-title">{{'food.' + menu.category | translate}}</h5>
+    <div class="products-list">
+      <div class="product" *ngFor="let item of menu.data" [class.active]="item.selected">
+        <div class="image">
+          <img src="../../../assets/img/products/{{item.image}}" alt="">
+        </div>
+        <div class="product-body">
+          <label for="product{{item.id}}" class="custom-checkbox" (change)="productSelected($event, item)">
+            <input type="checkbox" id="product{{item.id}}" [checked]="item.selected"/>
+            <span class="checkmark"></span>
+          </label>
+          <h5>{{'food.' + item.name | translate}}</h5>
+          <span>{{item.price}}₺</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+@import '../../../assets/css/sass/themes/theme';
+
+.ui-badge {
+  border-radius: 50px;
+  outline: initial;
+  box-shadow: none;
+  padding: 0.2em 0.75em;
+  user-select: none;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 74%;
+  font-weight: 400;
+  color: var(--text-white);
+  fill: var(--text-white);
+  line-height: 1.5;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &.primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    &:hover {
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+
+    &:hover {
+      background-color: var(--secondary-hover);
+      border-color: var(--secondary-hover);
+    }
+  }
+
+  &.success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+
+    &:hover {
+      background-color: var(--success-hover);
+      border-color: var(--success-hover);
+    }
+  }
+
+  &.warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+
+
+    &:hover {
+      background-color: var(--warning-hover);
+      border-color: var(--warning-hover);
+    }
+  }
+
+  &.danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+
+
+    &:hover {
+      background-color: var(--danger-hover);
+      border-color: var(--danger-hover);
+    }
+  }
+
+  &.light {
+    background-color: var(--light-color);
+    border-color: var(--light-color);
+    color: var(--text-medium);
+    fill: var(--text-medium);
+
+    &:hover {
+      background-color: var(--light-hover);
+      border-color: var(--light-hover);
+    }
+  }
+
+  &.outline {
+    background: transparent;
+
+    &.primary {
+      color: var(--primary-color);
+      fill: var(--primary-color);
+    }
+
+    &.secondary {
+      color: var(--secondary-color);
+      fill: var(--secondary-color);
+    }
+
+    &.success {
+      color: var(--success-color);
+      fill: var(--success-color);
+    }
+
+    &.warning {
+      color: var(--warning-color);
+      fill: var(--warning-color);
+    }
+
+    &.danger {
+      color: var(--danger-color);
+      fill: var(--danger-color);
+    }
+
+    &.light {
+      border-color: var(--light-color);
+      color: var(--text-light);
+      fill: var(--text-light);
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import '../../../assets/css/sass/themes/theme';
+
+#sidebar {
+  .main-menu {
+    position: fixed;
+    height: calc(100% - 70px);
+    width: 120px;
+    background: var(--background-white);
+    z-index: 3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: 0;
+    bottom: 0;
+    transition: transform .3s, border-radius .3s;
+    border-radius: 0 0.75rem 0.75rem 0;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        position: relative;
+        margin-bottom: 5px;
+
+        a {
+          height: 110px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          border-bottom: 1px solid var(--border-light);
+          color: var(--text-menu);
+          transition: all .3s;
+          position: relative;
+
+          &.active {
+            &:after {
+              content: " ";
+              background: var(--primary-color);
+              color: var(--text-white);
+              border-radius: 10px;
+              position: absolute;
+              width: 6px;
+              height: 90px;
+              top: 50%;
+              transform: translateY(-50%);
+              left: 0;
+            }
+          }
+
+          &:hover, &.active {
+            color: var(--primary-color);
+
+            i {
+              color: var(--primary-color);
+            }
+          }
+        }
+
+        i {
+          font-size: 32px;
+          line-height: 42px;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    width: 230px;
+    background: var(--background-white);
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-left: 1px solid var(--border-light);
+    height: calc(100% - 70px);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0;
+    box-shadow: 0 1px 15px rgb(0 0 0 / 10%), 0 1px 8px rgb(0 0 0 / 10%);
+    transition: transform .3s;
+    border-radius: 0 0.75rem 0.75rem 0;
+    transform: translateX(-110px);
+
+    ul {
+      li {
+        margin-left: 30px;
+        position: relative;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        margin-bottom: 10px;
+        color: var(--text-menu);
+
+        i {
+          font-size: 1.5em;
+          margin-right: 10px;
+          color: var(--text-dark);
+          vertical-align: middle;
+          display: inline-block;
+        }
+
+        &:hover {
+          color: var(--primary-color);
+          cursor: pointer;
+
+          i {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}
