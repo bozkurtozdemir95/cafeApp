@@ -151,9 +151,13 @@ h1, h2, h3, h4, h5, h6 {
       .main-menu {
         transform: translateX(-120px);
       }
+    }
 
-      .sub-menu {
-        transform: translateX(-230px) !important;
+    &.hide-sub {
+      #sidebar {
+        .sub-menu {
+          transform: translateX(-230px) !important;
+        }
       }
     }
 
@@ -164,17 +168,14 @@ h1, h2, h3, h4, h5, h6 {
 
   &.hide-sub {
     #sidebar {
-      .main-menu {
-        border-radius: 0 !important;
-      }
 
       .sub-menu {
-        transform: translateX(120px) !important;
+        transform: translateX(-120px) !important;
       }
-    }
 
-    .page-content {
-      margin-left: 30px !important;
+      .main-menu {
+        border-radius: 0 0.75rem 0.75rem 0 !important;
+      }
     }
   }
 }

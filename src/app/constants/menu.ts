@@ -17,6 +17,11 @@ const menuItems: any [] = [
     label: 'menu.menu',
     sub: [
       {
+        icon: 'iconsminds-hamburger',
+        label: 'menu.menu',
+        to: '/menu'
+      },
+      {
         icon: 'iconsminds-chef-hat',
         label: 'menu.categories',
         to: '/menu/categories'
@@ -28,6 +33,11 @@ const menuItems: any [] = [
     icon: 'iconsminds-business-man-woman',
     label: 'menu.employees',
     sub: [
+      {
+        icon: 'iconsminds-business-man-woman',
+        label: 'menu.employees',
+        to: '/employees'
+      },
       {
         icon: 'iconsminds-id-card',
         label: 'menu.create_role',

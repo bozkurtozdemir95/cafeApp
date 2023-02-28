@@ -4,29 +4,27 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class UiService {
-  theme = 'dark-mode';
+  theme = 'light-mode';
+  menuAlreadyToggled = false;
   hideMainMenu = false;
-  hideSubMenu = false;
-  activeSubmenu: any;
+  hideSubMenu = true;
+  activeSubmenu: any = [];
 
   constructor() {
   }
 
   toggleSidebar() {
+    if (!this.hideSubMenu) {
+      this.hideSubMenu = true;
+      return;
+    }
     this.hideMainMenu = !this.hideMainMenu;
   }
 
   toggleSubMenu(item: any) {
-    if (item.sub) {
-      this.hideSubMenu = true;
-      if (item.id === this.activeSubmenu.id) {
-        this.hideSubMenu = false;
-      }
-    } else {
-      this.hideSubMenu = false;
-    }
     this.activeSubmenu = item;
-    console.log(item);
+    this.hideSubMenu = !item.sub;
+
   }
 
   switchTheme($event: any) {
