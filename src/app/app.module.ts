@@ -1,32 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { PageTitleComponent } from './components/page-title/page-title.component';
-import { IconComponent } from './ui/icon/icon.component';
-import { ButtonComponent } from './ui/button/button.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { TablesComponent } from './pages/tables/tables.component';
-import { MenuComponent } from './pages/menu/menu.component';
-import { SettingsComponent } from './pages/settings/settings.component';
-import { AddMenuItemComponent } from './pages/menu/add-menu-item/add-menu-item.component';
-import { CheckoutComponent } from './pages/tables/checkout/checkout.component';
-import { AddOrderComponent } from './pages/tables/add-order/add-order.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HeaderComponent} from './components/header/header.component';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {PageTitleComponent} from './components/page-title/page-title.component';
+import {IconComponent} from './ui/icon/icon.component';
+import {ButtonComponent} from './ui/button/button.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {TablesComponent} from './pages/tables/tables.component';
+import {MenuComponent} from './pages/menu/menu.component';
+import {SettingsComponent} from './pages/settings/settings.component';
+import {AddMenuItemComponent} from './pages/menu/add-menu-item/add-menu-item.component';
+import {CheckoutComponent} from './pages/tables/checkout/checkout.component';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {BsDropdownModule} from "ngx-bootstrap/dropdown";
-import { ActionButtonComponent } from './ui/action-button/action-button.component';
-import { SwitchComponent } from './ui/switch/switch.component';
+import {ActionButtonComponent} from './ui/action-button/action-button.component';
+import {SwitchComponent} from './ui/switch/switch.component';
 import {TooltipModule} from "ngx-bootstrap/tooltip";
-import { FilterSelectComponent } from './ui/filter-select/filter-select.component';
-import { BadgeComponent } from './ui/badge/badge.component';
-import { EmployeesComponent } from './pages/employees/employees.component';
-
+import {FilterSelectComponent} from './ui/filter-select/filter-select.component';
+import {BadgeComponent} from './ui/badge/badge.component';
+import {EmployeesComponent} from './pages/employees/employees.component';
+import {TableDetailComponent} from "./pages/tables/table-detail/table-detail.component";
+import { OffcanvasComponent } from './ui/offcanvas/offcanvas.component';
+import {FormsModule} from "@angular/forms";
 
 
 // AoT requires an exported function for factories
@@ -48,29 +49,32 @@ export function HttpLoaderFactory(http: HttpClient) {
     SettingsComponent,
     AddMenuItemComponent,
     CheckoutComponent,
-    AddOrderComponent,
     ActionButtonComponent,
     SwitchComponent,
     FilterSelectComponent,
     BadgeComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    TableDetailComponent,
+    OffcanvasComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
-        }),
-        BsDropdownModule,
-        TooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    BsDropdownModule,
+    TooltipModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

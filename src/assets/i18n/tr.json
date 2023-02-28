@@ -11,7 +11,8 @@
     "employees": "Çalışanlar",
     "categories": "Kategoriler",
     "create_employee": "Çalışan Oluştur",
-    "create_role": "Rol Oluştur"
+    "create_role": "Rol Oluştur",
+    "table_details": "Masa Detayları"
   },
   "food": {
     "category": "Kategori",
@@ -56,7 +57,12 @@
   },
   "table": {
     "empty": "Boş",
-    "full": "Dolu"
+    "full": "Dolu",
+    "pcs": "ad",
+    "product": "Ürün",
+    "count": "Adet",
+    "amount": "Tutar",
+    "total": "Toplam"
   },
   "dashboard": {
     "pending_orders": "Bekleyen Siparişler",

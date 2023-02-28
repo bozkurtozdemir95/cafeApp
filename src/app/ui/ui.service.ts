@@ -9,13 +9,15 @@ export class UiService {
   hideMainMenu = false;
   hideSubMenu = true;
   activeSubmenu: any = [];
+  showTableDetails = false;
+  activeTable: any = {};
 
   constructor() {
   }
 
   toggleSidebar() {
     if (!this.hideSubMenu) {
-      this.hideSubMenu = true;
+      this.closeSubMenu();
       return;
     }
     this.hideMainMenu = !this.hideMainMenu;
@@ -24,7 +26,10 @@ export class UiService {
   toggleSubMenu(item: any) {
     this.activeSubmenu = item;
     this.hideSubMenu = !item.sub;
+  }
 
+  closeSubMenu() {
+    this.hideSubMenu = true;
   }
 
   switchTheme($event: any) {
@@ -39,6 +44,15 @@ export class UiService {
       document.body.classList.add(this.theme);
       document.body.classList.remove('dark-mode');
     }
+  }
 
+  toggleTableDetail = (table: any): void => {
+    this.activeTable = table;
+    if(this.showTableDetails){
+      this.showTableDetails = false;
+      this.activeTable = {};
+    } else{
+      this.showTableDetails = true;
+    }
   }
 }

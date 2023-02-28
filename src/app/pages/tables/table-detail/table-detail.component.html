@@ -1,0 +1,49 @@
+<offcanvas [showCanvas]="ui.showTableDetails" [toggle]="ui.toggleTableDetail">
+  <div class="off-canvas-header" *ngIf="ui.showTableDetails" header>
+    {{ui.activeTable.name}}
+    <button class="transparent-button" (click)="ui.toggleTableDetail('')">
+      <icon [icon]="'close'"></icon>
+    </button>
+  </div>
+  <div class="off-canvas-body" *ngIf="ui.showTableDetails" body>
+    <div class="table-responsive">
+      <table class="table table-borderless products-table">
+        <thead>
+        <tr>
+          <th>{{'table.product' | translate}}</th>
+          <th class="text-center">{{'table.count' | translate}}</th>
+          <th class="text-right">{{'table.amount' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of orders">
+          <td><p>{{'food.' + item.product.data.name | translate}}</p></td>
+          <td class="text-center">
+            <div class="count-input">
+              <button class="transparent-button"
+                      (click)="removeOrder(item)">
+                <i class="simple-icon-minus"></i>
+              </button>
+              <input type="number" [ngModel]="item.piece" readonly>
+              <button class="transparent-button" (click)="addOrder(item)">
+                <i class="simple-icon-plus"></i>
+              </button>
+            </div>
+
+          </td>
+          <td class="text-right"><p class="amount">{{item.product.data.price * item.piece}} ₺</p></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-center font-bold">{{'table.total' | translate}}:</td>
+          <td class="text-right font-bold amount">{{calculateTotal()}} ₺</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="off-canvas-footer" *ngIf="ui.showTableDetails" footer>
+    <ui-button [type]="'primary'" [size]="'sm'">Checkout</ui-button>
+    <ui-button [type]="'primary'" [size]="'sm'">Save</ui-button>
+  </div>
+</offcanvas>

@@ -179,4 +179,10 @@
       }
     }
   }
+
+  .header-logo {
+    &::ng-deep svg {
+      fill: var(--primary-color);
+    }
+  }
 }

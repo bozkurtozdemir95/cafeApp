@@ -11,7 +11,8 @@
     "employees": "Employees",
     "categories": "Categories",
     "create_employee": "Create Employee",
-    "create_role": "Create Role"
+    "create_role": "Create Role",
+    "table_details": "Table Details"
   },
   "food": {
     "category": "Category",
@@ -56,7 +57,12 @@
   },
   "table": {
     "empty": "Empty",
-    "full": "Full"
+    "full": "Full",
+    "pcs": "pcs",
+    "product": "Product",
+    "count": "Count",
+    "amount": "Amount",
+    "total": "Total"
   },
   "dashboard": {
     "pending_orders": "Pending Orders",

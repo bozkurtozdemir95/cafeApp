@@ -1,0 +1,6 @@
+<div class="off-canvas" [class.show]="showCanvas">
+  <ng-content select="[header]"></ng-content>
+  <ng-content select="[body]"></ng-content>
+  <ng-content select="[footer]"></ng-content>
+</div>
+<div class="off-canvas-outer" *ngIf="showCanvas" (click)="toggle()"></div>
